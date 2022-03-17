@@ -1,0 +1,275 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/********** CSS Styling Starts from here *************/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+/*** I found it easier to embbed fonts, so basically i imported the google font used for the mockup **/
+html{
+    font-family: 'Cormorant Garamond', Sans-serif;
+    font-size: 16px;
+}
+
+/*** This part styles the consistent elements on the site,header, nav, footer, safe to say defaults? ****/
+a{
+    text-decoration:none;
+}
+h1{
+    color:#644536;
+    font-size:2.5em;
+    font-weight:700;
+    line-height:1.4;
+    margin-bottom:1rem;
+    /* width:100%; */
+    max-width:600px;
+    padding:1em;
+}
+h2{
+    font-size:2rem;
+    font-weight:700;
+    margin:2.5rem 0 1rem;
+}
+p{
+    line-height:1.4;
+}
+.SHOP{
+    background-color:#c45c09;
+    border-radius: 4px;
+    color:white;
+    display:inline-block;
+    font-size: 16px;
+    margin-top:10px;
+    padding:10px;
+    text-align: center;
+    /*width: 100px;*/
+}
+/***************** Styling the nav *******************/
+
+/*** cleaner nav styling using psuedo class ******/
+nav ul {
+    display:flex;
+    flex-direction: column;  
+}
+nav ul li {
+    flex: 1;
+}
+nav a,
+nav a:link,
+nav a:visited {
+    background-color:#644536;
+    color:#ffffff;   
+    display: block;
+    padding-bottom: 0.50em;
+    padding-inline-start:0.60em;
+    padding-top:0.50em;
+    /*padding-inline: 0.50em;*/
+    Text-align: center;
+    transition: background-color 0.60s;
+}
+/** Transition the Nav on hover for some interactivity effect **/
+nav a:hover {
+    background-color: #c45c09;
+} 
+/****  Styling the logo **********/
+.bakerylogo{
+    /*padding:1em;*/
+    width:40%;
+}
+header{
+    background-color: #c4a381; 
+    background-repeat: no-repeat;
+    width:100%;
+}
+img{ 
+    margin:0 auto;
+    width: 100%;
+}
+/*** trouble styling ***/
+
+article{
+    position:relative;
+}
+/** Styling the main button on the page, threw a lot of codes at it, maybe not so efficient ***/
+.main-shop{
+    background-color:#c45c09;
+    border-radius: 4px;
+    color:white;
+    font-size: 22px;
+    left: 20%;
+    padding: 14px;
+    position:absolute;
+    text-align: center;
+    top: 80%;
+    /*width:100px;*/
+}
+/*** Animation to make main-shop button jump when hovered using animation keyframes "Hey Click Me"***/
+.main-shop:hover {
+    animation-delay: 1s;
+    animation-duration: 0.60s;
+    animation-iteration-count: infinite;
+    animation-name: jump;
+    animation-timing-function: ease-in-out;
+}
+@keyframes jump {
+    50% {transform: translate(0, -100px);}
+}
+.banner-image{
+    align-items: center;
+}
+.Tag-line{
+    /*left:20%;*/
+    margin:0 auto;
+    position:absolute;
+    top:20%;
+    vertical-align: middle;
+}
+/*section{
+     padding:10px;
+    background-color:#DDAA77;
+}*/
+main {
+    padding: 2rem;
+}
+.container {
+    /*margin: 0 auto;*/
+    margin:0 auto;
+    width: 100%;
+    /*max-width:600px;*/
+    
+}
+.Breakfast{
+    align-items: center;
+    background-color: #644536;
+    color:#ffffff;
+    display:flex;
+    flex-direction: column;
+    /*flex-wrap: wrap;
+    /**flex-direction: row-reverse; **/
+    padding: 1em;
+}
+.Treats{
+    align-items:center;
+    background-color: #DDAA77;
+    color:#ffffff;
+    display:flex;
+    flex-direction: column;
+    padding: 1em;
+}
+/*** Styling footer to make it distinct ***/
+footer{
+    background-color:#c4a381;
+    padding:10px;
+    /*width:100%;*/
+    /* display:flex; */
+}
+footer p{
+    color:black;
+    margin-top:10px;
+    /** padding:2em; **/
+    width:100%;
+}
+/********** Media Queries Starts Here *******************/
+/*** At screen size 600px(Mobile) and below, nav stays in column under the logo ***/
+@media (max-width: 600px) {
+    nav ul {
+    display:flex;
+    flex-direction: column;
+    }
+    }
+/** At screen size 768px (Tablet) menu nav displays row/horizontally beneath the logo **/
+@media (min-width: 768px) {
+    nav ul {
+    display:flex;
+    flex-direction: row;
+
+    }
+    }
+/**  At screen size 992px (Desktop) menu nav floats side by side with logo, banner loads a larger image, breakfast section displays grid in row reverse,
+Treats section also displays content in row-reverse. The coolest part for me! ***/
+@media screen and (min-width:992px){
+    nav{
+        align-items:center;
+        display:flex;
+        justify-content:space-between;
+    }
+    nav ul{
+        display:flex;
+        flex-direction: row;
+        flex-grow:1;
+        flex-wrap:nowrap;
+        justify-content:space-around;
+    }
+    .Breakfast{
+        display:flex;
+        /*flex-direction: column ;*/
+        flex-direction: row-reverse;
+        flex-wrap:nowrap;
+    }
+    /** This grid styling gave me an error in css tried to reaserch to fix it but no luck.I 
+    referenced adams code and it had the same error**/
+    .Breakfast-options{
+        display:grid;
+        grid-template-columns:repeat(3, 1fr);
+        width: 100%;
+}
+.Treats{
+    align-items:center;
+    background-color: #DDAA77;
+    color:#ffffff;
+    display:flex;
+    flex-direction: column;
+    flex-direction: row-reverse;
+    padding: 1em;
+}
+    .container{
+        max-width:1200px;
+        width:100%;  
+}
+}
